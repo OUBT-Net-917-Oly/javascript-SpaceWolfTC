@@ -2,12 +2,83 @@
 <html lang="en">
 <head>
     <title>JavaScript Calculator</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script type="text/javascript">
         //script goes here
+        //get first number from html form
+        function getNumber1() {
+            var number1 = document.getElementById("num1").value;
+            //turn text input to integer below with parseInt(var)
+            return parseInt(number1);
+        }
+        
+
+        //get second number from html form
+        function getNumber2() {
+            var number2 = document.getElementById("num2").value;
+            return parseInt(number2);
+        }
+
+        //add the numbers together
+        function add() {
+            var number1 = getNumber1();
+            var number2 = getNumber2();
+            var result = number1 + number2;
+            displayResult(result);
+        }
+
+        function subtract() {
+            var number1 = getNumber1();
+            var number2 = getNumber2();
+            var result = number1 - number2;
+            displayResult(result);
+
+        }
+        function multiply() {
+            var number1 = getNumber1();
+            var number2 = getNumber2();
+            var result = number1 * number2;
+            displayResult(result);
+        }
+
+        function divide() {
+            var number1 = getNumber1();
+            var number2 = getNumber2();
+            var result = number1 / number2;
+            displayResult(result);
+
+        }
+        function displayResult(result) {
+            document.getElementById("result").value = result;
+        }
+        //diplay result to the page
+
     </script>
 </head>
 <body>
+    <!--html comment-->
     <h1>JavaScript Calculator</h1>
     <br />
+    <label>Number 1:</label>
+    <input type="text" id="num1" />
+    <br />
+    <br />
+
+    <label>Number 2:</label>
+    <input type="text" id="num2" />
+    <br />
+    <br />
+
+    <input type="button" value="+" class="calc" onclick="add()"/>
+    <input type="button" value="-" class="calc" onclick="subtract()"/>
+    <input type="button" value="x" class="calc" onclick="multiply()"/>
+    <input type="button" value="/" class="calc" onclick="divide()"/>
+    <br />
+    <br />
+    
+    <label>Result:</label>
+    <input type="text" id="result" />
+
+
 </body>
 </html>
