@@ -9,48 +9,91 @@
         function getNumber1() {
             var number1 = document.getElementById("num1").value;
             //turn text input to integer below with parseInt(var)
-            return parseInt(number1);
+            var int1 = parseInt(number1);
+            if (isNaN(int1)===true){
+                alert("You must choose numbers!");
+                return "notnumber";
+            }
+            else {
+                return int1;
+            }
         }
         
 
         //get second number from html form
         function getNumber2() {
             var number2 = document.getElementById("num2").value;
-            return parseInt(number2);
+            var int2 = parseInt(number2);
+            if (isNaN(int2) === true) {
+                alert("You must choose numbers!");
+                return "notnumber";
+            }
+
+            else {
+                return int2;
+            }
         }
 
         //add the numbers together
         function add() {
             var number1 = getNumber1();
             var number2 = getNumber2();
-            var result = number1 + number2;
-            displayResult(result);
+            if ((number1==="notnumber")||(number2 === "notnumber")) {
+                displayResult("Only numbers....Got it?");
+            }
+            else {
+                var result = number1 + number2;
+                displayResult(result);
+            }
         }
 
         function subtract() {
             var number1 = getNumber1();
             var number2 = getNumber2();
-            var result = number1 - number2;
-            displayResult(result);
+            if ((number1 === "notnumber") || (number2 === "notnumber")) {
+                displayResult("Only numbers....Got it?");
+            }
+            else {
+                var result = number1 - number2;
+                displayResult(result);
+            }
 
         }
         function multiply() {
             var number1 = getNumber1();
             var number2 = getNumber2();
-            var result = number1 * number2;
-            displayResult(result);
+            if ((number1 === "notnumber") || (number2 === "notnumber")) {
+                displayResult("Only numbers....Got it?");
+            }
+            else {
+                var result = number1 * number2;
+                displayResult(result);
+            }
         }
 
         function divide() {
             var number1 = getNumber1();
             var number2 = getNumber2();
-            var result = number1 / number2;
-            displayResult(result);
+            if ((number1 === "notnumber") || (number2 === "notnumber")) {
+                displayResult("Only numbers....Got it?");
+            }
+            else if (number2 === 0) {
+                alert("Dividing by 0 has caused an apocalyptic event.  Nice job....");
+                displayResult("The world has ended.");
+            }
+            else {
+                var result = number1 / number2;
+                result = parseFloat(result).toFixed(2);
+                displayResult(result);
+            }
 
         }
         function displayResult(result) {
             document.getElementById("result").value = result;
         }
+
+
+        
         //diplay result to the page
 
     </script>
