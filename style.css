@@ -31,3 +31,9 @@ input{
     background: red;
     color: white;
 }
+
+.change {
+    background: green;
+    color: yellow;
+    border: 8px dashed purple;
+}
