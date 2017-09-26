@@ -122,13 +122,20 @@
             document.getElementById("result").value = result;
         }
 
+        function flip() {
+            var fun = document.querySelector("#special");
+            fun.classList.toggle("change");
+
+
+        }
+
 
         
         //diplay result to the page
 
     </script>
 </head>
-<body>
+<body id="special">
     <!--html comment-->
     <h1>JavaScript Calculator</h1>
     <br />
@@ -152,6 +159,7 @@
     <h3>Advanced Functions</h3>
     <input type="button" value="x^y" class="calc" onclick="power()" />
     <input type="button" value="nth Root" class="calc" onclick="root()" />
+    <input type="button" value="?" class="calc" onclick="flip()" />
     <br />
     <br />
     
