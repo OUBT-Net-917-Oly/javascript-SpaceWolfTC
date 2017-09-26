@@ -51,7 +51,7 @@
             var number1 = getNumber1();
             var number2 = getNumber2();
             if ((number1 === "notnumber") || (number2 === "notnumber")) {
-                displayResult("Only numbers....Got it?");
+                displayResult("Only whole numbers....Got it?");
             }
             else {
                 var result = number1 - number2;
@@ -63,7 +63,7 @@
             var number1 = getNumber1();
             var number2 = getNumber2();
             if ((number1 === "notnumber") || (number2 === "notnumber")) {
-                displayResult("Only numbers....Got it?");
+                displayResult("Only whole numbers....Got it?");
             }
             else {
                 var result = number1 * number2;
@@ -75,10 +75,12 @@
             var number1 = getNumber1();
             var number2 = getNumber2();
             if ((number1 === "notnumber") || (number2 === "notnumber")) {
-                displayResult("Only numbers....Got it?");
+                displayResult("Only whole numbers....Got it?");
             }
             else if (number2 === 0) {
                 alert("Dividing by 0 has caused an apocalyptic event.  Nice job....");
+                console.log("Zombies Deployed");
+                console.log("Rick is not here to save you.");
                 displayResult("The world has ended.");
             }
             else {
@@ -88,6 +90,34 @@
             }
 
         }
+
+        function power() {
+            var number1 = getNumber1();
+            var number2 = getNumber2();
+            if ((number1 === "notnumber") || (number2 === "notnumber")) {
+                displayResult("Only whole numbers....Got it?");
+            }
+            else {
+                var result = Math.pow(number1, number2);
+                result = parseFloat(result).toFixed(2);
+                displayResult(result);
+            }
+        }
+
+        function root() {
+            var number1 = getNumber1();
+            var number2 = getNumber2();
+            if ((number1 === "notnumber") || (number2 === "notnumber")) {
+                displayResult("Only whole numbers....Got it?");
+            }
+            else {
+                var result = Math.pow(number1, 1/number2);
+                result = parseFloat(result).toFixed(2);
+                displayResult(result);
+            }
+        }
+
+
         function displayResult(result) {
             document.getElementById("result").value = result;
         }
@@ -112,10 +142,16 @@
     <br />
     <br />
 
+    <h3>Basic Functions</h3>
+
     <input type="button" value="+" class="calc" onclick="add()"/>
     <input type="button" value="-" class="calc" onclick="subtract()"/>
     <input type="button" value="x" class="calc" onclick="multiply()"/>
     <input type="button" value="/" class="calc" onclick="divide()"/>
+
+    <h3>Advanced Functions</h3>
+    <input type="button" value="x^y" class="calc" onclick="power()" />
+    <input type="button" value="nth Root" class="calc" onclick="root()" />
     <br />
     <br />
     

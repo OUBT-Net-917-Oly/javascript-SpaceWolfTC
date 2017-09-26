@@ -20,7 +20,11 @@ body{
     background: black;
     min-width: 100px;
     min-height: 40px;
-   
+    
+}
+
+.calc:hover{
+    background: red;
 }
 
 input{
