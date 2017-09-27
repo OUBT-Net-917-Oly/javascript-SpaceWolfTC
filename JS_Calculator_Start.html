@@ -3,6 +3,39 @@
 <head>
     <title>JavaScript Calculator</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
+   
+</head>
+<body id="special">
+    <!--html comment-->
+    <h1>JavaScript Calculator</h1>
+    <br />
+    <label>Number 1:</label>
+    <input type="text" id="num1" />
+    <br />
+    <br />
+
+    <label>Number 2:</label>
+    <input type="text" id="num2" />
+    <br />
+    <br />
+
+    <h3>Basic Functions</h3>
+
+    <input type="button" value="+" class="calc" onclick="add()"/>
+    <input type="button" value="-" class="calc" onclick="subtract()"/>
+    <input type="button" value="x" class="calc" onclick="multiply()"/>
+    <input type="button" value="/" class="calc" onclick="divide()"/>
+
+    <h3>Advanced Functions</h3>
+    <input type="button" value="x^y" class="calc" onclick="power()" />
+    <input type="button" value="nth Root" class="calc" onclick="root()" />
+    <input type="button" value="?" class="calc" onclick="flip()" />
+    <br />
+    <br />
+    
+    <label>Result:</label>
+    <input type="text" id="result" />
+    <p></p>
     <script type="text/javascript">
         //script goes here
         //get first number from html form
@@ -10,7 +43,7 @@
             var number1 = document.getElementById("num1").value;
             //turn text input to integer below with parseInt(var)
             var int1 = parseInt(number1);
-            if (isNaN(int1)===true){
+            if (isNaN(int1) === true) {
                 alert("You must choose numbers!");
                 return "notnumber";
             }
@@ -18,7 +51,7 @@
                 return int1;
             }
         }
-        
+
 
         //get second number from html form
         function getNumber2() {
@@ -38,7 +71,7 @@
         function add() {
             var number1 = getNumber1();
             var number2 = getNumber2();
-            if ((number1==="notnumber")||(number2 === "notnumber")) {
+            if ((number1 === "notnumber") || (number2 === "notnumber")) {
                 displayResult("Only numbers....Got it?");
             }
             else {
@@ -82,6 +115,8 @@
                 console.log("Zombies Deployed");
                 console.log("Rick is not here to save you.");
                 displayResult("The world has ended.");
+                var end = document.querySelector("p");
+                end.innerHTML = "You can do more math if you want, but since the world has ended it seems a bit <em>pointless</em>.";
             }
             else {
                 var result = number1 / number2;
@@ -111,7 +146,7 @@
                 displayResult("Only whole numbers....Got it?");
             }
             else {
-                var result = Math.pow(number1, 1/number2);
+                var result = Math.pow(number1, 1 / number2);
                 result = parseFloat(result).toFixed(2);
                 displayResult(result);
             }
@@ -130,42 +165,12 @@
         }
 
 
-        
+
+
+
         //diplay result to the page
 
     </script>
-</head>
-<body id="special">
-    <!--html comment-->
-    <h1>JavaScript Calculator</h1>
-    <br />
-    <label>Number 1:</label>
-    <input type="text" id="num1" />
-    <br />
-    <br />
-
-    <label>Number 2:</label>
-    <input type="text" id="num2" />
-    <br />
-    <br />
-
-    <h3>Basic Functions</h3>
-
-    <input type="button" value="+" class="calc" onclick="add()"/>
-    <input type="button" value="-" class="calc" onclick="subtract()"/>
-    <input type="button" value="x" class="calc" onclick="multiply()"/>
-    <input type="button" value="/" class="calc" onclick="divide()"/>
-
-    <h3>Advanced Functions</h3>
-    <input type="button" value="x^y" class="calc" onclick="power()" />
-    <input type="button" value="nth Root" class="calc" onclick="root()" />
-    <input type="button" value="?" class="calc" onclick="flip()" />
-    <br />
-    <br />
-    
-    <label>Result:</label>
-    <input type="text" id="result" />
-
 
 </body>
 </html>
